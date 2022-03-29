@@ -1,7 +1,11 @@
 const express=require('express');
+const path = require('path');
 const sensorRoutes = require('./src/sensor/routes');
 const app=express();
-
+// html page call
+console.log(path.join(__dirname, '/html'));
+const StaticPath = path.join(__dirname, '/html');
+app.use(express.static(StaticPath));
 
 const port= process.env.port || 3000;
 
